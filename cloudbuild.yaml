@@ -6,6 +6,7 @@ steps:
     - |
        #uncomment below command if scancentral server is expecting a client auth token
        #echo client_auth_token=XXXXXXX > /opt/Fortify/ScanCentral/Core/config/client.properties
+       # FoP 
        scancentral -url $$FORTIFY_SC_URL start --build-tool none -uptoken $$FORTIFY_CI_TOKEN -upload --application $$APP_NAME --application-version $$APP_VERSION
   env:
     - 'FORTIFY_SC_URL=${_SC_URL}'
